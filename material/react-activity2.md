@@ -1,4 +1,4 @@
-# Activity: React ...
+# React: Activity 2
 
 > There are 3 parts in this activity.
 

@@ -1,4 +1,4 @@
-# Activity: React
+# React: Activity 1 
 
 > Before starting this activity, ensure you have a folder named "Dev" in your Documents directory. Inside the "Dev" folder, create another folder called "week2" if it doesn't already exist.
 

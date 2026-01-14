@@ -1,4 +1,4 @@
-# Exam - Level 1
+<!-- # Exam - Level 1
 
 In this task, you'll be adding authentication API and protecting the CRUD operations (create, read, update, delete) for tours API. 
 
@@ -187,7 +187,6 @@ In this task, you'll be adding authentication API and protecting the CRUD operat
      ```javascript
      req.user = await User.findOne({ _id }).select("_id");
      ```
-   <!-- > **Expected answer:** It fetches the User document by the decoded ID and attaches only the `_id` field to the request object, making it available in subsequent middleware/controllers via `req.user._id`. -->
 
 3. **Verify your understanding:**
    - Start the server (`npm run dev`)
@@ -316,7 +315,6 @@ In this task, you'll be adding authentication API and protecting the CRUD operat
    npm test -- tours.test.js
    ```
    - **Answer this question:** Did you need to make any changes to the tour-related controller functions? Why or why not?
-   <!-- - **Expected answer:** No changes needed. The tour controllers work correctly because they now filter by `user_id`, which is automatically set by the `requireAuth` middleware. The tests should pass as long as tours are properly isolated per user. -->
 
 2. Update the `userController` so that when a new user registers, the system validates their email and password using the `validator` library. Weak passwords and invalid emails should be rejected.
 
@@ -358,4 +356,4 @@ In this task, you'll be adding authentication API and protecting the CRUD operat
 - **"Email already in use" error:** Use a different email address for each signup test
 - **Database connection issues:** Verify your `MONGO_URI` in `.env` is correct
 - **Tests failing:** Run them one at a time and check the error messages for clues
-
+ -->

@@ -39,9 +39,8 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Topics
 
 - Backend exam
+- React Intro
 - [Agentic coding vs Vibe coding vs Vibe Engineering](https://www.linkedin.com/pulse/vibe-coding-vs-engineering-do-we-really-need-label-cronquist-umqmf/)
-
-
 
 
 <!-- 
