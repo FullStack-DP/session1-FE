@@ -13,18 +13,18 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 ![](./material/img/learning-phases.png)
 
----
+<!-- ---
 
 > [!TIP]
-> **Before** the **pair programming sessions**, take a moment to review the group activities, watch the pre‑session video, and get familiar with the task. That way, you’ll be ready to dive in and make the most of our time together.
+> **Before** the **pair programming sessions**, take a moment to review the group activities, watch the pre‑session video, and get familiar with the task. That way, you’ll be ready to dive in and make the most of our time together. -->
 
 -----
 
 ### Session Timeline 
 
 - Morning: Backend Exam
-- Lunch Break - 12:00 -13:00
-- Afternoon
+- Lunch Break - 12:40 -13:40
+- Afternoon 13:40
   - Mini lecture (~35min)
   - `Break` (~15min)
   - Group Activity (~35min)
