@@ -12,6 +12,12 @@ The video homework uses emojis to represent the significance of each video. Belo
 |               | Challenging           | :sweat_smile:        |
 
 
+> [!IMPORTANT]  
+> - If you are aiming for a grade between **3, 4, or 5**, you are expected to **code along with the pre‑lecture videos** and make **at least three commits for each video**.  
+> - Please **upload your code before class**.  
+> - This will help you come prepared for both the **theory session** and the **pair‑programming session**.  
+> - **Do not copy anyone’s code** — the goal is to learn by doing.
+
 ### Thursday Morning: 
 
 - :star: [How to use Props.Children in React? (2min)](https://www.youtube.com/watch?v=JpM9hiQTlAk)
