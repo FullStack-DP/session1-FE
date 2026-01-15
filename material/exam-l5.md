@@ -56,8 +56,7 @@ Example (you may add other folders if you need):
 	routes/
 		userRoutes.js
 		carRoutes.js
-		aiRoutes.js   (optional) OR add the AI route inside one of the two routers
-	middlewares/
+		aiRoutes.js  
 		errorHandler.js
 		notFound.js
 	app.js
