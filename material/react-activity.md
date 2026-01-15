@@ -87,17 +87,17 @@ Before starting Part 2:
 3. Run the following command to create a new React project using Vite:
 
 ```bash
-npx create-vite@latest week2-fe-lab2 --template react
+npx create-vite@latest week1-fe-lab2 --template react
 ```
 
-This command creates a new React project in a folder named `week2-fe-lab2`.
+This command creates a new React project in a folder named `week1-fe-lab2`.
 
 > If you receive error like this `npm ERR! enoent ENOENT: no such file or directory`, then one fix is to issue this command: `npm install npm -g` . 
 
 4. Change into the project directory:
 
 ```bash
-cd week2-fe-lab2
+cd week1-fe-lab2
 ```
 
 5. In the project directory, run the following command to install the project dependencies:
@@ -181,17 +181,17 @@ Before starting Part 3:
 3. Run the following command to create a new React project using Vite:
 
 ```bash
-npx create-vite@latest week2-fe-lab3 --template react
+npx create-vite@latest week1-fe-lab3 --template react
 ```
 
-This command creates a new React project in a folder named `week2-fe-lab3`.
+This command creates a new React project in a folder named `week1-fe-lab3`.
 
 > If you receive error like this `npm ERR! enoent ENOENT: no such file or directory`, then one fix is to issue this command: `npm install npm -g` . 
 
 4. Change into the project directory:
 
 ```bash
-cd week2-fe-lab3
+cd week1-fe-lab3
 ```
 
 5. In the project directory, run the following command to install the project dependencies:
@@ -288,12 +288,12 @@ This command starts the development server, and you should see output indicating
 
 ### Step 1: Project Setup
 
-- Follow the same steps as in Part 1 to set up a new React project, and name the folder `week2-fe-lab4`.
+- Follow the same steps as in Part 1 to set up a new React project, and name the folder `week1-fe-lab4`.
 
 - Change into the project directory and install the project dependencies:
 
 ```bash
-cd week2-fe-lab4
+cd week1-fe-lab4
 npm install
 ```
 

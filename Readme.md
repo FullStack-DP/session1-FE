@@ -22,11 +22,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 ### Session Timeline 
 
-- Morning:
-  - Mini lecture (~35min)
-  - `Break` (~15min)
-  - Pair programming (~35min)
-  - Pair programming (~35min)
+- Morning: Backend Exam
 - Lunch Break - 12:00 -13:00
 - Afternoon
   - Mini lecture (~35min)
@@ -56,18 +52,18 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 -->
 
 -----
-### Morning: Pair Programming
+### Morning: Backend Exam
 
 Please **choose one option** only. The idea is to let everyone start at a level that matches their current backend skills.
 
-- [Option 1: Level 5 Exam ](./material/exam-l5.md) designed for students who already have solid backend experience and want to aim for a higher grade. Choose this exam if you are **comfortable** with:
+- [Option 1: Level 5 Exam ](./material/exam-l5.md) designed for students who already have solid backend experience and want to aim for a higher grade. Choose this option if you are **comfortable** with:
   - Express  
   - Node.js  
   - MongoDB  
   - AI
 
-- [Option 2: Level 1 Exam (basic pass level)](./material/exam-l1.md): This exam ensures you can **pass the course** even if you are still learning the fundamentals. 
-  - Choose this exam if you are **not yet confident** with backend development.  
+- [Option 2: Level 1 Exam (basic pass level)](./material/exam-l1.md): This exam ensures you can **pass the Backend part of the course** even if you are still learning the fundamentals. 
+  - Choose this option if you are **not yet confident** with backend development.  
   - If you start with **Level 1**, you can take a **similar higher‑level exam later** to improve your grade once you feel ready.  
 
 -----

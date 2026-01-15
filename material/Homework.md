@@ -14,16 +14,16 @@ The video homework uses emojis to represent the significance of each video. Belo
 
 ### Thursday Morning: 
 
-- :bell: [How to use Props.Children in React? (2min)](https://www.youtube.com/watch?v=JpM9hiQTlAk)
+- :star: [How to use Props.Children in React? (2min)](https://www.youtube.com/watch?v=JpM9hiQTlAk)
 - :star: [How to CONDITIONAL RENDER in React? (10min)](https://youtu.be/XvURBpFxdGw)
 - :star: [React CARD components (12min)](https://youtu.be/yYiwxYqQ9vg?si=sq50RKwzhf75eZ6f)
-- :blue_book: Review of React Basics: [Learn React 18 – Full Tutorial for Beginners] **From start till 2h 22min**
+- :blue_book: Review of React Basics: [Learn React 18 – Full Tutorial for Beginners](https://youtu.be/Flbw5BX_AX0?si=Pch8zLMRoSJwQzTQ) **From start till 2h 22min**
 
 ### Thursday Afternoon:
 
 - :star:  [How to render LISTS in React (26min)](https://youtu.be/fkl1Kn_QWCI?si=nDHKnyngeMkNYJcr)
 - :star: [JavaScript map() method in 7 minutes!](https://www.youtube.com/watch?v=xNQH1NbZQ0E) 
-- :bell: [map() (12min)](https://www.youtube.com/watch?v=80KX6aD9R7M)
+- :star: [map() (12min)](https://www.youtube.com/watch?v=80KX6aD9R7M)
 - Review:
   - :star: [React: how to add CSS styles (8min)](https://youtu.be/r3SMd0YTSZs?si=9QExkyNxhe9FDRNu) 
   - :blue_book:  [React CARD components (12min)](https://youtu.be/yYiwxYqQ9vg?si=sq50RKwzhf75eZ6f)
