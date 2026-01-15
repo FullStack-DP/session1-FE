@@ -1,4 +1,3 @@
-
 # Exam (Backend)
 
 **Date:** Jan 15, 2026  
@@ -107,12 +106,11 @@ Create a `Car` schema with at least:
 
 ---
 
-## Routers (2 main routers)
-You must have exactly **two routers**:
+## Routers (3 main routers)
+You must have exactly **three routers**:
 1) **Users router** (`/api/users`)
 2) **Cars router** (`/api/cars`)
-
-The **Gemini endpoint** must be added as an extra endpoint inside **one of these two routers** (example: `POST /api/users/ai`).
+3) **AI router** (`/api/ai`)
 
 ---
 
@@ -146,6 +144,8 @@ Implement all endpoints below:
 ### Cars Endpoints (`/api/cars`)
 Implement all endpoints below:
 
+**Note:** Protected car routes (PATCH, DELETE) must verify that the logged-in user owns the car (token user matches car's `user_id`).
+
 1) `POST /api/cars`: protected route
 - Creates a car
 
@@ -173,8 +173,7 @@ Add **one endpoint** that calls **Gemini** using the **same pattern as the in-cl
 
 ### Endpoint spec
 - Method: `POST`
-- Path (choose one):
-	- `/api/users/ai` OR `/api/cars/ai` OR `/api/ai/gemini`
+- Path: `/api/ai` (or `/api/ai/gemini`)
 
 ### Input (JSON request)
 Your endpoint must accept a structured JSON body like:
