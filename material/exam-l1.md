@@ -1,20 +1,19 @@
-<!-- # Exam - Level 1
+# Exam - Level 1
 
-In this task, you'll be adding authentication API and protecting the CRUD operations (create, read, update, delete) for tours API. 
+In this task, you'll be adding authentication and protecting the CRUD operations (create, read, update, delete) for tours API. 
 
 
 ---
 
 ## Important: 
 
-1. Commit Format: **use this commit format**:
+- Commit Format: **use this commit format**:
 
       ```bash
       git add .
       git commit -m "[iterX] Your commit message"
       git push
       ```
-2. **DO NOT** delete the **.github** directory, from the cloned repo
 
 ---
 
@@ -309,14 +308,7 @@ In this task, you'll be adding authentication API and protecting the CRUD operat
 
 ### **Iteration 5: Final Testing**
 
-1. **Test tour endpoints:**  
-   Run the test suite:
-   ```bash
-   npm test -- tours.test.js
-   ```
-   - **Answer this question:** Did you need to make any changes to the tour-related controller functions? Why or why not?
-
-2. Update the `userController` so that when a new user registers, the system validates their email and password using the `validator` library. Weak passwords and invalid emails should be rejected.
+1. Update the `userController` so that when a new user registers, the system validates their email and password using the `validator` library. Weak passwords and invalid emails should be rejected.
 
 **Steps to complete:**
 - Import the validator library at the top of your controller file:
@@ -338,7 +330,7 @@ In this task, you'll be adding authentication API and protecting the CRUD operat
      }
      ```
 
-3. **Commit and Push**
+2. **Commit and Push**
    - When complete, commit your setup with the proper format:
      ```bash
      git add .
@@ -356,4 +348,4 @@ In this task, you'll be adding authentication API and protecting the CRUD operat
 - **"Email already in use" error:** Use a different email address for each signup test
 - **Database connection issues:** Verify your `MONGO_URI` in `.env` is correct
 - **Tests failing:** Run them one at a time and check the error messages for clues
- -->
+
