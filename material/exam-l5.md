@@ -44,7 +44,6 @@ Your structure must match the **same approach we used in class** (routes → con
 Example (you may add other folders if you need):
 
 ```
-src/
 	config/
 		db.js
 	models/
@@ -62,9 +61,8 @@ src/
 		errorHandler.js
 		notFound.js
 	app.js
-server.js
-.env
-package.json
+   .env
+   package.json
 ```
 
 ### Server requirements
