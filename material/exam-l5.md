@@ -1,26 +1,25 @@
 
-# Exam (Backend) — MERN (No React Yet)
+# Exam (Backend)
 
-**Date:** Jan 14, 2026  
+**Date:** Jan 15, 2026  
 **Topic:** Node.js + Express + MongoDB (Mongoose) + MVC Pattern + Postman + Gemini API endpoint  
-**Server Port:** `4003`
 
 ## Rules
 - **No vibe coding** (no blind copy/paste). Every student is expected to **review and understand** every line they submit.
-- You may use your class notes and your previous session repos.
-- If you use AI for help, you must be able to explain your code. Unexplained code = no credit.
+- You may use your previous session repos.
+- If you use AI for help, you must be able to explain your code.
+- The exam session **will be recorded** in your laptop so **please remove any personal** items from Desktop
 
 ## Goal
 Build a REST API using **Express + Mongoose** following the **MVC pattern** exactly as we practiced in class.
 
 You will implement:
-1) A **User** model + CRUD endpoints
+1) A **User** model + login/signup/getme endpoints
 2) A **Car** model + CRUD endpoints
 3) An **AI endpoint** that calls **Gemini** and accepts/returns **JSON in a structured format** (same idea as our in-class demo)
 4) Full Postman testing + export results to JSON
 
 ---
-
 
 ## Project Setup Requirements
 
@@ -28,13 +27,8 @@ You will implement:
 - Node.js + Express
 - MongoDB + Mongoose
 - `dotenv`
-- `cors`
-- `morgan` (optional but recommended)
+- `morgan`
 
-### Must NOT use
-- React
-- Any ORM other than Mongoose
-- A single-file “everything in server.js” structure
 
 ---
 
@@ -44,28 +38,30 @@ Your structure must match the **same approach we used in class** (routes → con
 Example (you may add other folders if you need):
 
 ```
-	config/
-		db.js
-	models/
-		User.js
-		Car.js
-	controllers/
-		userController.js
-		carController.js
-		aiController.js
-	routes/
-		userRoutes.js
-		carRoutes.js
-		aiRoutes.js  
-		errorHandler.js
-		notFound.js
-	app.js
-   .env
-   package.json
+config/
+	db.js
+models/
+	User.js
+	Car.js
+controllers/
+	userController.js
+	carController.js
+	aiController.js
+routes/
+	userRoutes.js
+	carRoutes.js
+	aiRoutes.js
+middlewares/
+	errorHandler.js
+	notFound.js
+app.js
+server.js
+.env
+package.json
 ```
 
 ### Server requirements
-- Must start with: `npm run dev` (or `npm start` if that’s what we used in class)
+- Must start with: `npm run dev`
 - Must run on: `http://localhost:4003`
 - Must connect to MongoDB using `MONGODB_URI` in `.env`
 
@@ -75,36 +71,63 @@ Example (you may add other folders if you need):
 
 ### 1) User Model (`User`)
 Create a `User` schema with at least:
-- `name` (String, required, min length 2)
-- `email` (String, required, unique, lowercase, trimmed)
-- `age` (Number, required, min 16)
-- `role` (String, enum: `"student" | "admin"`, default: `"student"`)
-- timestamps enabled
+- `name`: String, required, minimum length 2  
+- `email`: String, required, unique, lowercase, trimmed  
+- `age`: Number, required, minimum 16  
+- `role`: String, enum: `"student" | "admin"`, default `"student"`  
+- `password`: String, required  
+- `companyName`: String, required  
+- `companyAddress`: String, required  
+- `githubUsername`: String, required  
+- `phoneNumber`: String, required  
+- `jobTitle`: String  
+- timestamps enabled  
+- versionKey disabled  
+- validation required with meaningful error messages 
 
 Validation is required. Return meaningful errors.
 
 ### 2) Car Model (`Car`)
 Create a `Car` schema with at least:
-- `brand` (String, required)
-- `model` (String, required)
-- `year` (Number, required, min 1990, max current year + 1)
-- `price` (Number, required, min 0)
-- `isAvailable` (Boolean, default true)
-- `owner` (ObjectId ref `User`, optional)
-- timestamps enabled
+- `brand`: String, required  
+- `model`: String, required  
+- `make`: String, required  
+- `vin`: String, required  
+- `manufacturer`: String, required  
+- `year`: Number, required, minimum 1990, maximum current year + 1  
+- `price`: Number, required, minimum 0  
+- `type`: String, required (e.g., Sedan, SUV)  
+- `availability.isAvailable`: Boolean, required  
+- `availability.dueDate`: Date  
+- `availability.renter`: String  
+- `user_id`: ObjectId reference to `User`, required  
+- `owner`: ObjectId reference to `User` 
+- timestamps enabled  
+- validation required with meaningful errors  
 
 ---
 
 ## Routers (2 main routers)
-You must have exactly **two main routers**:
-1) **Users router**
-2) **Cars router**
+You must have exactly **two routers**:
+1) **Users router** (`/api/users`)
+2) **Cars router** (`/api/cars`)
 
-Example mount paths:
-- `/api/users`
-- `/api/cars`
+The **Gemini endpoint** must be added as an extra endpoint inside **one of these two routers** (example: `POST /api/users/ai`).
 
-> You may add an AI route file, but the project must still clearly have the two main routers above.
+---
+
+## Auth Requirements (for protected routes)
+Protected routes must use the **same JWT approach we used in class**:
+- Passwords must be hashed using `bcrypt` (never store plain text passwords)
+- Login/Signup returns a JWT token
+- `GET /api/users/getme` (and protected car routes) requires:
+	- header: `Authorization: Bearer <token>`
+- Token payload should include at least the user id
+- API responses must never return the password
+
+Required `.env` variables:
+- `JWT_SECRET=`
+- `JWT_EXPIRES_IN=` (optional)
 
 ---
 
@@ -113,45 +136,33 @@ Example mount paths:
 ### Users Endpoints (`/api/users`)
 Implement all endpoints below:
 
-1) `POST /api/users`
-- Creates a user
-- Returns: created user JSON
+1) `POST /api/users/login`: not protected
 
-2) `GET /api/users`
-- Returns list of users
-- Add optional query support (at least one):
-	- `?role=student` OR `?minAge=18`
+2) `POST /api/users/signup`: not protected
 
-3) `GET /api/users/:id`
-- Returns one user by id
+3) `GET /api/users/getme`:  protected route
 
-4) `PATCH /api/users/:id`
-- Updates allowed fields only (name, age, role)
-- Email should not be updated (or if you allow it, justify and validate)
-
-5) `DELETE /api/users/:id`
-- Deletes the user
 
 ### Cars Endpoints (`/api/cars`)
 Implement all endpoints below:
 
-1) `POST /api/cars`
+1) `POST /api/cars`: protected route
 - Creates a car
 
-2) `GET /api/cars`
+2) `GET /api/cars`: not protected
 - Returns list of cars
 - Add optional query support (choose at least one):
 	- `?brand=Toyota`
 	- `?minYear=2015`
 	- `?available=true`
 
-3) `GET /api/cars/:id`
+3) `GET /api/cars/:id`: not protected
 - Returns one car
 
-4) `PATCH /api/cars/:id`
+4) `PATCH /api/cars/:id`: protected route
 - Updates allowed fields (brand, model, year, price, isAvailable, owner)
 
-5) `DELETE /api/cars/:id`
+5) `DELETE /api/cars/:id`: protected route
 - Deletes the car
 
 ---
@@ -222,15 +233,12 @@ Implement:
 }
 ```
 
-Also handle invalid Mongo ObjectId (`CastError`) with `400`.
-
 ---
 
 ## Postman Requirement
 You must:
 1) Test **every endpoint** (Users + Cars + AI)
-2) Use environment variables in Postman (baseUrl, etc.)
-3) Export:
+2) Export:
 	 - The Postman **collection** as JSON
 	 - The Postman **environment** as JSON
 
@@ -253,7 +261,9 @@ Submit a GitHub repository link containing:
 - `.env.example` (NOT your real `.env`) containing:
 	- `MONGODB_URI=`
 	- `PORT=4003`
-	- `GEMINI_API_KEY=`
+	- `JWT_SECRET=mock-secret-not-real`
+	- `JWT_EXPIRES_IN=1d`
+	- `GEMINI_API_KEY=mock-key-not-real-key-here`
 - `README.md` that explains:
 	- how to install (`npm i`)
 	- how to run (`npm run dev`)
@@ -262,13 +272,14 @@ Submit a GitHub repository link containing:
 
 ---
 
-## Grading (Rubric)
+## Grading
 - MVC structure + clean routing/controller/model separation (20%)
-- User endpoints + validation + status codes (20%)
-- Car endpoints + validation + relations (owner) (20%)
-- Gemini endpoint (JSON in/out + error handling + env key) (20%)
+- User endpoints + validation + status codes (10%)
+- Car endpoints + validation + relations (owner) (10%)
+- Gemini endpoint (JSON in/out + error handling + env key) (10%)
 - Postman testing + correct JSON export (10%)
-- Code quality + readability + students can explain their code (10%)
+- Code quality + readability (10%)
+- students can explain their code (30%)
 
 ---
 
